@@ -1,0 +1,50 @@
+﻿=== INVOCACAO 1 (tempo total: 73.573 s) ===
+sam : No current session found, using default AWS::AccountId
+No linha:1 caractere:502
++ ... -Command { $o1 = (sam local invoke -e events/pedido.json 2>&1 | Out-S ...
++                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (No current sess... AWS::AccountId:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Invoking app.lambda_handler (python3.12)
+Local image was not found.
+Removing rapid images for repo public.ecr.aws/sam/emulation-python3.12
+Building image.........................................................................................................
+.......................................................................................................................
+.......................................................................................................................
+.........................................................
+
+Using local image: public.ecr.aws/lambda/python:3.12-rapid-x86_64.
+
+Mounting C:\Users\victo\Downloads\Cesar\rotavital-serverless\.aws-sam\build\HelloWorldFunction as 
+/var/task:ro,delegated, inside runtime container
+SAM_CONTAINER_ID: 8cad26d535ab30b11105a8fe0a6a79f5a2d9019eef8e151b71563191997575f7
+START RequestId: 72616d85-de89-4d11-a44e-21f88a2e3e44 Version: $LATEST
+END RequestId: 72616d85-de89-4d11-a44e-21f88a2e3e44
+REPORT RequestId: 72616d85-de89-4d11-a44e-21f88a2e3e44	Init Duration: 0.04 ms	Duration: 109.08 ms	Billed Duration: 110 
+ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+
+{"statusCode": 201, "body": "{\"guia\": \"G-R-001\", \"hospital\": \"H-Recife\", \"bolsas\": [\"O-NEG-0142\"], \"invocacaoNesteAmbiente\": 1}"}
+
+=== INVOCACAO 2 (tempo total: 12.977 s) ===
+sam : No current session found, using default AWS::AccountId
+No linha:1 caractere:594
++ ... -Command { $o2 = (sam local invoke -e events/pedido.json 2>&1 | Out-S ...
++                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (No current sess... AWS::AccountId:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Invoking app.lambda_handler (python3.12)
+Local image is up-to-date
+Using local image: public.ecr.aws/lambda/python:3.12-rapid-x86_64.
+
+Mounting C:\Users\victo\Downloads\Cesar\rotavital-serverless\.aws-sam\build\HelloWorldFunction as 
+/var/task:ro,delegated, inside runtime container
+SAM_CONTAINER_ID: 7e1223c0c34261f4f26ae8a876297bf4b49e953029a9b588c2b202011da6c435
+START RequestId: e2a6311e-4e1b-4bdb-beda-62bb269adc66 Version: $LATEST
+END RequestId: e2a6311e-4e1b-4bdb-beda-62bb269adc66
+REPORT RequestId: e2a6311e-4e1b-4bdb-beda-62bb269adc66	Init Duration: 0.05 ms	Duration: 88.73 ms	Billed Duration: 89 
+ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+
+{"statusCode": 201, "body": "{\"guia\": \"G-R-001\", \"hospital\": \"H-Recife\", \"bolsas\": [\"O-NEG-0142\"], \"invocacaoNesteAmbiente\": 1}"}
+

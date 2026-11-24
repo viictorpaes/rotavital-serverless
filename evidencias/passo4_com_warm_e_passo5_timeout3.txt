@@ -1,0 +1,89 @@
+=== PASSO 4 (COM --warm-containers LAZY) ===
+--- Chamada 1 (4.285 s) ---
+HTTP/1.1 201 CREATED
+Server: Werkzeug/3.1.9 Python/3.13.16
+Date: Tue, 24 Nov 2026 18:02:14 GMT
+Content-Type: application/json
+Content-Length: 87
+Connection: close
+
+{"guia": "G-R-002", "hospital": "H-Caruaru", "bolsas": [], "invocacaoNesteAmbiente": 1}
+
+--- Chamada 2 (1.122 s) ---
+HTTP/1.1 201 CREATED
+Server: Werkzeug/3.1.9 Python/3.13.16
+Date: Tue, 24 Nov 2026 18:02:16 GMT
+Content-Type: application/json
+Content-Length: 87
+Connection: close
+
+{"guia": "G-R-002", "hospital": "H-Caruaru", "bolsas": [], "invocacaoNesteAmbiente": 2}
+
+--- Chamada 3 (1.098 s) ---
+HTTP/1.1 201 CREATED
+Server: Werkzeug/3.1.9 Python/3.13.16
+Date: Tue, 24 Nov 2026 18:02:17 GMT
+Content-Type: application/json
+Content-Length: 87
+Connection: close
+
+{"guia": "G-R-002", "hospital": "H-Caruaru", "bolsas": [], "invocacaoNesteAmbiente": 3}
+
+
+=== PASSO 5 (TIMEOUT = 3s, demorar = true) ===
+--- Chamada Timeout (4.209 s) ---
+HTTP/1.1 502 BAD GATEWAY
+Server: Werkzeug/3.1.9 Python/3.13.16
+Date: Tue, 24 Nov 2026 18:02:21 GMT
+Content-Type: application/json
+Content-Length: 36
+Connection: close
+
+{"message":"Internal server error"}
+
+
+--- Logs do sam local start-api --warm-containers LAZY ---
+No current session found, using default AWS::AccountId
+Mounting HelloWorldFunction at http://127.0.0.1:3000/guias [POST]
+You can now browse to the above endpoints to invoke your functions. You do not need to restart/reload SAM CLI while working on your functions, changes will be reflected instantly/automatically. If you used sam build before running local commands, you will need to re-run sam build for the changes to be picked up. You only need to restart SAM CLI if you update your AWS SAM template
+2026-11-24 15:02:10 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2026-11-24 15:02:10 [33mPress CTRL+C to quit[0m
+Invoking app.lambda_handler (python3.12)
+Local image is up-to-date
+Using local image: public.ecr.aws/lambda/python:3.12-rapid-x86_64.
+
+Mounting C:\Users\victo\Downloads\Cesar\rotavital-serverless\.aws-sam\build\HelloWorldFunction as /var/task:ro,delegated, inside runtime container
+SAM_CONTAINER_ID: 74aab5a2d1ce426e24377c7ac9f95a01ca03aafdec184170b4b5139bd7bb6e9b
+START RequestId: 7908fdbb-8f4d-49a0-a194-a1f7c7f6e292 Version: $LATEST
+END RequestId: 7908fdbb-8f4d-49a0-a194-a1f7c7f6e292
+REPORT RequestId: 7908fdbb-8f4d-49a0-a194-a1f7c7f6e292	Init Duration: 0.10 ms	Duration: 104.87 ms	Billed Duration: 105 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+
+No Content-Type given. Defaulting to 'application/json'.
+2026-11-24 15:02:14 127.0.0.1 - - [24/Nov/2026 15:02:14] "[35m[1mPOST /guias HTTP/1.1[0m" 201 -
+Invoking app.lambda_handler (python3.12)
+Lambda function 'HelloWorldFunction' is already running
+START RequestId: 4744db8a-9c0f-4571-997e-3ed2886d7810 Version: $LATEST
+END RequestId: 4744db8a-9c0f-4571-997e-3ed2886d7810
+REPORT RequestId: 4744db8a-9c0f-4571-997e-3ed2886d7810	Duration: 1.47 ms	Billed Duration: 2 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+
+No Content-Type given. Defaulting to 'application/json'.
+2026-11-24 15:02:16 127.0.0.1 - - [24/Nov/2026 15:02:16] "[35m[1mPOST /guias HTTP/1.1[0m" 201 -
+Invoking app.lambda_handler (python3.12)
+Lambda function 'HelloWorldFunction' is already running
+START RequestId: 506eebf8-f1a7-4de0-bb45-07306dd35405 Version: $LATEST
+END RequestId: 506eebf8-f1a7-4de0-bb45-07306dd35405
+REPORT RequestId: 506eebf8-f1a7-4de0-bb45-07306dd35405	Duration: 1.21 ms	Billed Duration: 2 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+
+No Content-Type given. Defaulting to 'application/json'.
+2026-11-24 15:02:17 127.0.0.1 - - [24/Nov/2026 15:02:17] "[35m[1mPOST /guias HTTP/1.1[0m" 201 -
+Invoking app.lambda_handler (python3.12)
+Lambda function 'HelloWorldFunction' is already running
+START RequestId: c5fc4c0b-ccf2-4156-a69b-f9ee75c3cbb9 Version: $LATEST
+Function 'HelloWorldFunction' timed out after 3 seconds
+24 Nov 2026 18:02:21,222 [ERROR] (rapid) Invoke failed error=errResetReceived InvokeID=c5fc4c0b-ccf2-4156-a69b-f9ee75c3cbb9
+END RequestId: c5fc4c0b-ccf2-4156-a69b-f9ee75c3cbb9
+REPORT RequestId: c5fc4c0b-ccf2-4156-a69b-f9ee75c3cbb9	Duration: 3000.00 ms	Billed Duration: 3000 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+
+Invalid lambda response received: Lambda response must be valid json
+2026-11-24 15:02:21 127.0.0.1 - - [24/Nov/2026 15:02:21] "[35m[1mPOST /guias HTTP/1.1[0m" 502 -

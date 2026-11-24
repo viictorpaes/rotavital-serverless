@@ -1,0 +1,72 @@
+=== PASSO 4 (SEM --warm-containers) ===
+--- Chamada 1 (1.238 s) ---
+HTTP/1.1 201 CREATED
+Server: Werkzeug/3.1.9 Python/3.13.16
+Date: Tue, 24 Nov 2026 17:58:44 GMT
+Content-Type: application/json
+Content-Length: 87
+Connection: close
+
+{"guia": "G-R-002", "hospital": "H-Caruaru", "bolsas": [], "invocacaoNesteAmbiente": 1}
+
+--- Chamada 2 (1.112 s) ---
+HTTP/1.1 201 CREATED
+Server: Werkzeug/3.1.9 Python/3.13.16
+Date: Tue, 24 Nov 2026 17:58:45 GMT
+Content-Type: application/json
+Content-Length: 87
+Connection: close
+
+{"guia": "G-R-002", "hospital": "H-Caruaru", "bolsas": [], "invocacaoNesteAmbiente": 2}
+
+--- Chamada 3 (1.079 s) ---
+HTTP/1.1 201 CREATED
+Server: Werkzeug/3.1.9 Python/3.13.16
+Date: Tue, 24 Nov 2026 17:58:46 GMT
+Content-Type: application/json
+Content-Length: 87
+Connection: close
+
+{"guia": "G-R-002", "hospital": "H-Caruaru", "bolsas": [], "invocacaoNesteAmbiente": 3}
+
+--- Logs do sam local start-api ---
+No current session found, using default AWS::AccountId
+Initializing the lambda functions containers.
+Local image is up-to-date
+Using local image: public.ecr.aws/lambda/python:3.12-rapid-x86_64.
+
+Mounting C:\Users\victo\Downloads\Cesar\rotavital-serverless\.aws-sam\build\HelloWorldFunction as /var/task:ro,delegated, inside runtime container
+SAM_CONTAINER_ID: b949c59e789e3a7b8ba0766ee86d39c88fc5cd23c0f070f678faa6d92a766d03
+Containers created. Waiting for readiness...
+Waiting for 1 containers to be running...
+All 1 containers running after 0.0 seconds
+All containers are ready.
+Mounting HelloWorldFunction at http://127.0.0.1:3000/guias [POST]
+You can now browse to the above endpoints to invoke your functions. You do not need to restart/reload SAM CLI while working on your functions, changes will be reflected instantly/automatically. If you used sam build before running local commands, you will need to re-run sam build for the changes to be picked up. You only need to restart SAM CLI if you update your AWS SAM template
+2026-11-24 14:58:42 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2026-11-24 14:58:42 [33mPress CTRL+C to quit[0m
+Invoking app.lambda_handler (python3.12)
+Lambda function 'HelloWorldFunction' is already running
+START RequestId: 0d6a4415-5efa-4b59-8efa-87bf9cce5644 Version: $LATEST
+END RequestId: 0d6a4415-5efa-4b59-8efa-87bf9cce5644
+REPORT RequestId: 0d6a4415-5efa-4b59-8efa-87bf9cce5644	Init Duration: 0.26 ms	Duration: 86.04 ms	Billed Duration: 87 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+
+No Content-Type given. Defaulting to 'application/json'.
+2026-11-24 14:58:44 127.0.0.1 - - [24/Nov/2026 14:58:44] "[35m[1mPOST /guias HTTP/1.1[0m" 201 -
+Invoking app.lambda_handler (python3.12)
+Lambda function 'HelloWorldFunction' is already running
+START RequestId: ad3cc2c4-f7e9-4e28-b7e4-78bd0b85c870 Version: $LATEST
+END RequestId: ad3cc2c4-f7e9-4e28-b7e4-78bd0b85c870
+REPORT RequestId: ad3cc2c4-f7e9-4e28-b7e4-78bd0b85c870	Duration: 3.53 ms	Billed Duration: 4 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+
+No Content-Type given. Defaulting to 'application/json'.
+2026-11-24 14:58:45 127.0.0.1 - - [24/Nov/2026 14:58:45] "[35m[1mPOST /guias HTTP/1.1[0m" 201 -
+Invoking app.lambda_handler (python3.12)
+Lambda function 'HelloWorldFunction' is already running
+START RequestId: 8bf9a5e4-9d9e-4e71-bc8a-47bd6a5a2a57 Version: $LATEST
+END RequestId: 8bf9a5e4-9d9e-4e71-bc8a-47bd6a5a2a57
+REPORT RequestId: 8bf9a5e4-9d9e-4e71-bc8a-47bd6a5a2a57	Duration: 1.58 ms	Billed Duration: 2 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+
+No Content-Type given. Defaulting to 'application/json'.
+2026-11-24 14:58:46 127.0.0.1 - - [24/Nov/2026 14:58:46] "[35m[1mPOST /guias HTTP/1.1[0m" 201 -
